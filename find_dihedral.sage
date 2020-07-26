@@ -273,7 +273,7 @@ get_irreducibility_and_orders(f_81,OK)
 
 
 """
-We may use Corollary 2.2 from Dieulefait's papper "Newforms, Inner twists, and
+We may use Corollary 2.2 from Dieulefait's paper "Newforms, Inner twists, and
 the Inverse Galois problem for projective linear groups" (suitably tweaked for
 non-trivial character) to sanity check this last example, since it has level prime
 to 7
