@@ -131,6 +131,7 @@ def get_stats(B, lam, OK, aps, is_dihedral_lam):
     running_set = set()
     proportion_dict = {}
     all_red = True
+    smallest_p_irreducible = 0
     unpack_B = list(enumerate(prime_range(B)))
     for i,p in unpack_B:
         if p != CHARACTERISTIC:
@@ -148,8 +149,12 @@ def get_stats(B, lam, OK, aps, is_dihedral_lam):
             running_set = running_set.union({p_order})
             if all_red:
                     all_red = all_red and not pol_p.is_irreducible()
+            if not all_red and smallest_p_irreducible == 0:
+                smallest_p_irreducible = p
     # The following is used to rule out image contained in Borel
     print("\nall reducible: {}".format(all_red))
+    if not all_red:
+        print("\nsmallest p where Frob charpoly is irreducible: {}".format(smallest_p_irreducible))
 
     if is_dihedral_lam:
         print("\nProjective orders: {}".format(running_set))
